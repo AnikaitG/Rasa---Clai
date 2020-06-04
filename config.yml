@@ -2,6 +2,7 @@
 # https://rasa.com/docs/rasa/nlu/components/
 language: en
 pipeline:
+  - name: spellcheck.SpellCheck
   - name: WhitespaceTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
