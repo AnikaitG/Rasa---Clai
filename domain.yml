@@ -1,0 +1,627 @@
+actions:
+- utter_cheer_up
+- utter_did_that_help
+- utter_feedback
+- utter_goodbye
+- utter_greet
+- utter_happy
+- utter_iamabot
+- utter_kb_init_txt
+- utter_not_helpful
+- utter_post_feedback
+- action_give_help
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- helpful
+- not_helpful
+- ask_help
+- kb_1
+- kb_2
+- kb_3
+- kb_4
+- kb_5
+- kb_6
+- kb_7
+- kb_8
+- kb_9
+- kb_10
+- kb_11
+- kb_12
+- kb_13
+- kb_14
+- kb_15
+- kb_16
+- kb_17
+- kb_18
+- kb_19
+- kb_20
+- kb_21
+- kb_22
+- kb_23
+- kb_24
+- kb_25
+- kb_26
+- kb_27
+- kb_28
+- kb_29
+- kb_30
+- kb_31
+- kb_32
+- kb_33
+- kb_34
+- kb_35
+- kb_36
+- kb_37
+- kb_38
+- kb_39
+- kb_40
+- kb_41
+- kb_42
+- kb_43
+- kb_44
+- kb_45
+- kb_46
+- kb_47
+- kb_48
+- kb_49
+- kb_50
+- kb_51
+- kb_52
+- kb_53
+- kb_54
+- kb_55
+- kb_56
+- kb_57
+- kb_58
+- kb_59
+- kb_60
+- kb_61
+- kb_62
+- kb_63
+responses:
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_feedback:
+  - buttons:
+    - payload: Helpful
+      title: Helpful
+    - payload: Not Helpful
+      title: Not Helpful
+    text: Please let me know if this was helpful.
+  - buttons:
+    - payload: Helpful
+      title: Helpful
+    - payload: Not Helpful
+      title: Not Helpful
+    text: How did you like the suggestion?
+  - buttons:
+    - payload: Helpful
+      title: Helpful
+    - payload: Not Helpful
+      title: Not Helpful
+    text: How was it?
+  - buttons:
+    - payload: Helpful
+      title: Helpful
+    - payload: Not Helpful
+      title: Not Helpful
+    text: Was it helpful?
+  - buttons:
+    - payload: Helpful
+      title: Helpful
+    - payload: Not Helpful
+      title: Not Helpful
+    text: Do let me know if this was useful to you.
+  - buttons:
+    - payload: Helpful
+      title: Helpful
+    - payload: Not Helpful
+      title: Not Helpful
+    text: I hope the suggestion was good enough
+  - buttons:
+    - payload: Helpful
+      title: Helpful
+    - payload: Not Helpful
+      title: Not Helpful
+    text: Let me know if this was useful, your feedback matters!
+  - buttons:
+    - payload: Helpful
+      title: Helpful
+    - payload: Not Helpful
+      title: Not Helpful
+    text: Did it answer your question?
+  - buttons:
+    - payload: Helpful
+      title: Helpful
+    - payload: Not Helpful
+      title: Not Helpful
+    text: Hope you liked the suggestion.
+  utter_goodbye:
+  - text: Bye
+  utter_greet:
+  - text: Hey! How are you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_kb_1:
+  - text: "I can suggest you this video which explains how Broadcom uses a combination\
+      \ of Clarity and Rally to develop software. Good to understand how two tools\
+      \ can be used by different groups within the same organisation. \n\nSee the\
+      \ [video](https://youtu.be/jt6AWOlWso0) explaining [How Broadcom Builds Apps\
+      \ with Clarity PPM and Rally Software](https://youtu.be/jt6AWOlWso0)"
+  utter_kb_10:
+  - text: "*TIMESHEETS IN CLARITY*\r\nYou can use the Timesheets module in Clarity\
+      \ PPM to record time and have accurate time reporting for project cost tracking\
+      \ and charge code analysis.\r\n\r\nWatch the [video](https://youtu.be/PJGrHlqMFDE)\
+      \ to see how you can use timesheets in Clarity PPM.\r\n\r\nTo learn more about\
+      \ Timesheets, see [New User Experience: Enter Hours and Submit a Timesheet](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-enter-hours-and-submit-a-timesheet.html)."
+  utter_kb_11:
+  - text: "Watch the [video](https://youtu.be/-44ZezdJ6zA) to see how you can use\
+      \ Resource Management in Clarity PPM.\r\n\r\n*TIP*\r\nTo listen to a Clarity\
+      \ PPM Expert, explain how you can leverage the resource management capabilities\
+      \ of Clarity PPM, see [Resource Management: Balanced Team](https://community.broadcom.com/enterprisesoftware/viewdocument/replay-resource-management-balan-1?CommunityKey=7f0cbca3-5f93-4d44-a369-1a8ce98f5578&tab=librarydocuments.html).\
+      \ \r\n\r\nTo learn about Resource Management, see [New User Experience: Request\
+      \ Resources and Roles to Staff Investments](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-request-resources-and-roles-to-staff-investments.html)."
+  utter_kb_12:
+  - text: 'You can go through the article [New User Experience: Create and Edit Hierarchies](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/New-User-Experience--Create-and-Edit-Hierarchies.html)
+      to learn about hierarchies in Clarity PPM.
+
+
+      Additionally, you might also be interested in this [Video on Investment Hierarchies](https://web.microsoftstream.com/video/ca570d09-29d6-4a1d-a57b-becf9db4a08b).'
+  utter_kb_13:
+  - text: 'You can go through the article [Top-Down Planning with Roadmaps](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-top-down-planning-with-roadmaps.html),
+      it will give you detailed insights on How to Use Roadmaps in Clarity PPM.
+
+
+      Here are some *additional resources* you can go through:
+
+      * To listen to a Clarity PPM Expert explain how you can leverage roadmaps, see
+      [Roadmapping Your Enterprise Plans](https://community.broadcom.com/enterprisesoftware/viewdocument/replay-roadmapping-your-enterpris?CommunityKey=7f0cbca3-5f93-4d44-a369-1a8ce98f5578&tab=librarydocuments.html).
+
+      * Watch the [Clarity PPM Roadmaps](https://www.youtube.com/playlist?list=PLynEdQRJawmwqx8I4l_b41i-HvQzfvBm9&disable_polymer=true.html)
+      playlist on YouTube.'
+  utter_kb_14:
+  - text: 'To learn about reporting, see [Advanced Reporting with Jaspersoft](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/advanced-reporting-with-jaspersoft.html).
+
+
+      To listen to a Clarity PPM Expert explain how you can leverage the reporting
+      capabilities of Clarity PPM, see [Reporting and Analytics: Finding the Truth](https://community.broadcom.com/enterprisesoftware/viewdocument/replay-reporting-and-analytics-fi?CommunityKey=7f0cbca3-5f93-4d44-a369-1a8ce98f5578&tab=librarydocuments.html).'
+  utter_kb_15:
+  - text: "Rita is a Financial Manager. Her key responsibilities include budgeting,\
+      \ projecting cash flows, and determining how to invest and finance projects.\
+      \ Rita wants to figure out how much a project is expected to cost and minimize\
+      \ financial risk. As a financial manager, she can use the Financials page to\
+      \ access the financial plans for a project. Rita can also complete the following\
+      \ goals:\r\n* View all the financial cost plans on the Plan List page.\r\n*\
+      \ Create, edit, and analyze cost plans.\r\n* When ready, she can mark the plan\
+      \ of record and send it for approval. (When a cost plan is approved, it becomes\
+      \ the budget plan for a project.)\r\n* Adjust the cost plan based on the progress\
+      \ of projects and create a new cost plan that either merges with or replaces\
+      \ the existing budget.\r\n\r\nClick on [Manage Financial Plans](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-manage-financial-plans.html)\
+      \ to see how Rita could effectively manage her project financials."
+  utter_kb_16:
+  - text: See the article [Review Transactions Associated with Actual Costs](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-manage-financial-plans.html#concept.dita_72053454a095f94a77de95730f4ea5383261d773_ReviewTransactionsAssociatedWithActualCosts)
+      to understand how to review transactions in associated with actuals.
+  utter_kb_17:
+  - text: You can organize the financial grids by using the grid controls described
+      in [Organize Columns on the Grid](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-manage-financial-plans.html#concept.dita_72053454a095f94a77de95730f4ea5383261d773_OrganizeColumnsontheGrid).
+  utter_kb_18:
+  - text: See the document [Analyze Cost Plans](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-manage-financial-plans.html#concept.dita_72053454a095f94a77de95730f4ea5383261d773_AnalyzeCostPlans)
+      to get more details.
+  utter_kb_19:
+  - text: See [Work with Cost Plans](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-manage-financial-plans.html#concept.dita_72053454a095f94a77de95730f4ea5383261d773_WorkwithCostPlans)
+      to understand the step by step process of using Cost Plans.
+  utter_kb_2:
+  - text: "Here is an article for you, which could help you in understanding the [_Overview\
+      \ of Clarity PPM_](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/Getting-Started.html#concept.dita_4f58326d-8735-4d5d-8383-cda5ae9a97a6_aboutclarityppm).\r\
+      \n\r\nAdditionally, you might be interested in \"[Getting Started with Clarity\
+      \ PPM](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/Getting-Started.html#concept.dita_4f58326d-8735-4d5d-8383-cda5ae9a97a6_keymodules)\"\
+      \ video series."
+  utter_kb_20:
+  - text: Please See [Measure Progress and Publish Project Status Report](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-measure-progress-and-publish-project-status-reports.html)
+      to learn in details.
+  utter_kb_21:
+  - text: "You can create new risks, issues, and change requests in each project.\
+      \ Work with the team to mitigate the risk or if the impact is great enough,\
+      \ raise it as an issue. You can also submit a change request for stakeholders\
+      \ to review and approve.\r\n\r\nSee [Manage Risks, Issues, and Changes](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-manage-risks-issues-and-changes.html),\
+      \ to understand how you can manage project risks efficiently."
+  utter_kb_22:
+  - text: "This might answer your question.\r\n\r\nProject teams can share project\
+      \ documents and organize links in the Clarity PPM New User Experience. Project\
+      \ documents are critical for effective team collaboration and compliance audits.\
+      \ You can upload and download policies, procedures, drafts, requirements, contracts,\
+      \ and other project artifacts. Users can upload up to five files with a maximum\
+      \ size of 20 MB each.\r\n  \r\n* [Organize Project Links](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-project-documents-and-links.html#concept.dita_c0ec6a98ceb297ea772aad2f4ae17a6853f9290c_OrganizeProjectLinks)\r\
+      \n* [Configure Dynamic Links to Other CA PPM Application Pages](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-project-documents-and-links.html#concept.dita_c0ec6a98ceb297ea772aad2f4ae17a6853f9290c_ConfigureDynamicLinkstoOtherCAPPMApplicationPages)\r\
+      \n* [Upload Documents](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-project-documents-and-links.html#concept.dita_c0ec6a98ceb297ea772aad2f4ae17a6853f9290c_UploadDocuments)\r\
+      \n* [Apply Tags to a Document](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-project-documents-and-links.html#concept.dita_c0ec6a98ceb297ea772aad2f4ae17a6853f9290c_ApplyTagstoaDocument)\r\
+      \n* [Sort Your Documents](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-project-documents-and-links.html#concept.dita_c0ec6a98ceb297ea772aad2f4ae17a6853f9290c_SortYourDocuments)\r\
+      \n* [Find Project Documents](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-project-documents-and-links.html#concept.dita_c0ec6a98ceb297ea772aad2f4ae17a6853f9290c_FindProjectDocuments)\r\
+      \n* [Create Folder](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-project-documents-and-links.html#concept.dita_c0ec6a98ceb297ea772aad2f4ae17a6853f9290c_CreateFolder)\r\
+      \n* [Delete a File or Folder](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-project-documents-and-links.html#concept.dita_c0ec6a98ceb297ea772aad2f4ae17a6853f9290c_DeleteaFileorFolder)"
+  utter_kb_23:
+  - text: "Click Grid View on the top right of the page to view the task grid. In\
+      \ the Grid View, the tasks appear as rows of data. Use the task grid to sort,\
+      \ filter, and configure the view to suit your needs for better data entry.\r\
+      \nUse Column Panel to configure the grid and display additional columns or remove\
+      \ existing columns from the grid. The Column Panel list all attributes including\
+      \ custom attributes configured for the Project object.\r\n\r\nHere is the link\
+      \ to the detailed document for [Managing Tasks in Grid View](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-project-phases-milestones-tasks-and-to-do-items.html#concept.dita_ac4d9bc80baa87ccdcb448ea02cfbbf31e05c275_GridView)."
+  utter_kb_24:
+  - text: "Watch the [video](https://youtu.be/5xRRJSssXxE) to see how to Manage Tasks\
+      \ in Board View\r\n\r\nIn the board layout, tasks appear as cards organized\
+      \ by columns. Use the task board to group, rank, sort, visualize, and accomplish\
+      \ work tasks.\r\n\r\nTo learn how to Manage Tasks in Board View in details,\
+      \ see the article [Manage Tasks in the Board View](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-project-phases-milestones-tasks-and-to-do-items.html#concept.dita_ac4d9bc80baa87ccdcb448ea02cfbbf31e05c275_BoardView)."
+  utter_kb_25:
+  - text: 'You can watch this [video](https://youtu.be/psa9vSE5YHU) to see how to
+      Manage Tasks in Timeline Layout.
+
+
+      Additionally, you can go through the article on how to [Manage Tasks in Timeline
+      Layout](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-project-phases-milestones-tasks-and-to-do-items.html#concept.dita_ac4d9bc80baa87ccdcb448ea02cfbbf31e05c275_Timeine).'
+  utter_kb_26:
+  - text: "You can integrate Clarity PPM with Microsoft Project (MSP) to manage, schedule,\
+      \ and track projects with either tool. Both Clarity PPM and MSP provide similar\
+      \ project management features; however, their core business rules are different.\
+      \ Clarity PPM is a centralized enterprise solution and MSP is a scheduling tool.\r\
+      \nFor large-scale replanning or automatic scheduling algorithms, Clarity PPM\
+      \ Schedule Connect opens projects in MSP. Schedule Connect provides a bidirectional\
+      \ connection between Clarity PPM and MSP and changes in both products are easily\
+      \ synchronized.\r\n\r\n* [Benefits of Integrating Clarity PPM with Microsoft\
+      \ Project](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/Using-Classic-Clarity-PPM/project-management/msp-manage-projects-with-microsoft-project.html#concept.dita_cf0d4f459988ceb4667804f6a4692223bbb7cd13_BenefitsofIntegratingcappmwithMicrosoftProject)\r\
+      \n* [Deciding Between the Legacy and New Microsoft Project Driver](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/Using-Classic-Clarity-PPM/project-management/msp-manage-projects-with-microsoft-project.html#concept.dita_cf0d4f459988ceb4667804f6a4692223bbb7cd13_DecidingBetweentheLegacyandNewMicrosoftProjectDriver)\r\
+      \n* [Working Copies of Projects in Microsoft Project](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/Using-Classic-Clarity-PPM/project-management/msp-manage-projects-with-microsoft-project.html#concept.dita_cf0d4f459988ceb4667804f6a4692223bbb7cd13_WorkingCopiesofProjectsinMicrosoftProject)\r\
+      \n* [Do Not Use Open Workbench and Microsoft Project for the Same Project](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/Using-Classic-Clarity-PPM/project-management/msp-manage-projects-with-microsoft-project.html#concept.dita_cf0d4f459988ceb4667804f6a4692223bbb7cd13_DoNotUseOpenWorkbenchandMicrosoftProjectfortheSameProject)"
+  utter_kb_27:
+  - text: "You can follow one of these methods to create a project: \n* Create the\
+      \ project from a template.\n* Create the project manually.\n\nTo learn how to\
+      \ Create a Project in Clarity PPM, see the article [Create a Project](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/Using-Classic-Clarity-PPM/project-management/create-projects-teams-and-tasks.html#concept.dita_5225b95e06301dd26b00a130a6f99a37bdac5183_CreateaProject)."
+  utter_kb_28:
+  - text: See the article [Manage Projects From the Grid Layout](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html#concept.dita_a97fe2ad916280192b726fb65c3c3a727e8a1101_ManageProjectsGridView)
+      to understand how to Manage Projects from Grid Layout.
+  utter_kb_29:
+  - text: See the article [Navigate to Projects](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html#concept.dita_a97fe2ad916280192b726fb65c3c3a727e8a1101_NavigatetoProjects)
+      to understand the steps to Navigate to differnt Project Layout (*Project Tiles*
+      and *Project Grid*).
+  utter_kb_3:
+  - text: I can suggest you to go through this Video to understand the [Foundations
+      of Project and Portfolio Management](https://web.microsoftstream.com/video/162623ee-9f58-46a8-b7b5-afa1d1e2587f)
+  utter_kb_30:
+  - text: 'See the link [Project Details with Display Mappings](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html#concept.dita_a97fe2ad916280192b726fb65c3c3a727e8a1101_ProjectDetailswithDisplayMappings)
+      to understand the display mapping in the project details.
+
+
+      To learn how to _Configure Display Mappings_, see the topic [Clarity PPM Studio
+      Object Views](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/reference/clarity-ppm-studio-development/clarity-ppm-studio-object-views.html).'
+  utter_kb_31:
+  - text: See the article [Manage Project Tiles](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html#concept.dita_a97fe2ad916280192b726fb65c3c3a727e8a1101_ManageProjectTiles)
+      to understand how to Manage Projects from Tiles Layout.
+  utter_kb_32:
+  - text: "See the below steps to open projects in gantt view or external scheduler.\n\
+      1. Open a project and click *TASK LIST*.\n2. On the *TASK LIST* page, at top\
+      \ right, click the *\xE2\u2039\xAE Actions* menu.\n\n* To view the tasks in\
+      \ a Gantt chart, click *PPM GANTT*.\n\nA new window shows the projects tasks\
+      \ in the classic Clarity PPM Gantt view. See [Project Schedules in Gantt View](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/Using-Classic-Clarity-PPM/project-management/project-schedules-in-the-gantt-view.html).\n\
+      \n* To view the tasks in an external scheduler, select the scheduler (for example,\
+      \ CA Open Workbench or Microsoft Project).Y\n\nou can go through this to know\
+      \ more about [*Project Management in Clarity PPM*](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html)."
+  utter_kb_33:
+  - text: 'See the article [REST API: Documentation for Authorized Developers](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/reference/rest-api-documentation-for-authorized-developers.html).'
+  utter_kb_34:
+  - text: To learn about Managing Budget Plan in a Project, see the article on [Working
+      with Budget Plans](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-manage-financial-plans.html#concept.dita_72053454a095f94a77de95730f4ea5383261d773_WorkwithBudgetPlans).
+  utter_kb_35:
+  - text: "You can start a conversation or can post your comments in a reply message\
+      \ with optional attachments and links. Conversations are a collection of replies\
+      \ to an original theme or question. Conversations provide a collaborative forum\
+      \ for all team members to discuss, document, and solve project-specific issues.\
+      \ For example, use conversations to discuss customer feedback or share observations\
+      \ during development. Conversations also help resource managers and project\
+      \ coordinators discuss which resources or roles to allocate to an investment.\r\
+      \n\r\nThese are few helpful links to refer\r\n  \r\n* [Conversations and Replies](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-start-a-conversation-or-post-a-reply.html#concept.dita_3238c3d9d3756068591571889e08e24550017d9e_ConversationsandReplies)\r\
+      \n* [Conversations About Projects ](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-start-a-conversation-or-post-a-reply.html#concept.dita_3238c3d9d3756068591571889e08e24550017d9e_ConversationsAboutProjects)\
+      \ \r\n* [Conversations About Tasks](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-start-a-conversation-or-post-a-reply.html#concept.dita_3238c3d9d3756068591571889e08e24550017d9e_ConversationsAboutTasks)\r\
+      \n* [Conversations About Project Risks, Issues, or Changes](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-start-a-conversation-or-post-a-reply.html#concept.dita_3238c3d9d3756068591571889e08e24550017d9e_ConversationsAboutProjectRisksIssuesorChanges)\r\
+      \n* [Conversations About Investments, Resources, and Roles](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-start-a-conversation-or-post-a-reply.html#concept.dita_3238c3d9d3756068591571889e08e24550017d9e_ConversationsAboutInvestmentsResourcesandRoles)\r\
+      \n* [Mention a User Using the @Sign](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-start-a-conversation-or-post-a-reply.html#concept.dita_3238c3d9d3756068591571889e08e24550017d9e_MentionaUserUsingtheSign)\r\
+      \n* [Conversation Notifications](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-start-a-conversation-or-post-a-reply.html#concept.dita_3238c3d9d3756068591571889e08e24550017d9e_ConversationNotifications)\r\
+      \n* [Attach Files in Conversations](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-start-a-conversation-or-post-a-reply.html#concept.dita_3238c3d9d3756068591571889e08e24550017d9e_AttachFilesinConversations)"
+  utter_kb_36:
+  - text: See [Manage Idea Financials](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-capture-develop-and-approve-new-ideas/New-User-Experience--Manage-Financial-Module-in-Idea.html)
+      to understand how the idea financials could be managed effectively.
+  utter_kb_37:
+  - text: "The new Investment Types feature provides a way for administrators to create\
+      \ and configure custom investment objects with the same capabilities that they\
+      \ already enjoy using for projects and other non-project investments. However,\
+      \ investment types are not constrained by the traditional boundaries associated\
+      \ with traditional project management. \n\n1. [Prerequisites](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-administration-and-configuration/new-user-experience-configure-custom-investment-types.html#concept.dita_d65f51464308da6c120b161d8e07eac2ac50c67d_Prerequisites)\n\
+      2. [Create an Investment Type](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-administration-and-configuration/new-user-experience-configure-custom-investment-types.html#concept.dita_d65f51464308da6c120b161d8e07eac2ac50c67d_CreateanInvestmentType)\n\
+      3. [Configure Automatic Numbering for Investment IDs](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-administration-and-configuration/new-user-experience-configure-custom-investment-types.html#concept.dita_d65f51464308da6c120b161d8e07eac2ac50c67d_ConfigureAutomaticNumberingforInvestmentIDs)\n\
+      4. [Create a Custom Subobject for a Custom Investment Type in Studio](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-administration-and-configuration/new-user-experience-configure-custom-investment-types.html#concept.dita_d65f51464308da6c120b161d8e07eac2ac50c67d_ConfigureCustomSubObjCusInv)\n\
+      5. [Manage Simple Budgets for Custom Investments](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-administration-and-configuration/new-user-experience-configure-custom-investment-types.html#concept.dita_d65f51464308da6c120b161d8e07eac2ac50c67d_ManageSimpleBudgetsforCustomInvestments)\n\
+      6. [Calculate Financial Metrics](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-administration-and-configuration/new-user-experience-configure-custom-investment-types.html#concept.dita_d65f51464308da6c120b161d8e07eac2ac50c67d_CalculateFinancialMetrics)\n\
+      8. [Limitations and Constraints](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-administration-and-configuration/new-user-experience-configure-custom-investment-types.html#concept.dita_d65f51464308da6c120b161d8e07eac2ac50c67d_LimitationsandConstraints)\n\
+      9. [Data Warehouse Reporting Capabilities for Your Custom Investments](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-administration-and-configuration/new-user-experience-configure-custom-investment-types.html#concept.dita_d65f51464308da6c120b161d8e07eac2ac50c67d_DataWarehouseReportingCapabilitiesforYourCustomInvestments)\n\
+      10. [Frequently-Asked Questions (FAQ)](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-administration-and-configuration/new-user-experience-configure-custom-investment-types.html#concept.dita_d65f51464308da6c120b161d8e07eac2ac50c67d_FrequentlyAskedQuestionsFAQ)"
+  utter_kb_38:
+  - text: See the article to understand how you can manage the [Custom Investment
+      Financials](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-and-edit-custom-investments/New-User-Experience--Manage-Custom-Investment-Financials.html).
+  utter_kb_39:
+  - text: "See the Video to get an overview of [Custom Investments](https://youtu.be/MTpo7WtQ-bs).\r\
+      \n\r\nTo learn more about Custom Investments, see [New User Experience: Create\
+      \ and Edit Custom Investments](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-and-edit-custom-investments.html)."
+  utter_kb_4:
+  - text: 'Here is a video for you which you can watch to [Get Started with the Custom
+      Investments](https://youtu.be/MTpo7WtQ-bs) in Clarity PPM.
+
+
+      To learn more about Custom Investments, see [Create and Edit Custom Investments](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-and-edit-custom-investments.html).'
+  utter_kb_40:
+  - text: 'I have got you this diagram, which illustrates a typical project life cycle:
+
+
+      This image illustrates a typical project life cycle
+
+      ![Project Lifecycle](https://techdocs.broadcom.com/content/dam/broadcom/techdocs/us/en/assets/docops/ccppmop1561/image_describing_the_project_lifecycle.png)
+
+
+      Click [here](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html)
+      to see the full article on Project Management.'
+  utter_kb_41:
+  - text: "When a project is no longer needed, you can make it inactive.\r\n1. Open\
+      \ a project and click on the _Details_ tah.\r\n2. In the _Settings_ group, clear\
+      \ the _Active_ check box.\r\n\r\n*Please Note*:\r\nTo change an active project\
+      \ to _inactive_, you would require edit access rights for the project. \r\n\
+      The _Financial Status_ of the project must also be _closed_ or _On Hold_. "
+  utter_kb_42:
+  - text: "To learn how to Export Grid Data to a CSV File, see the article \r\n[Getting\
+      \ Started with the New User Experience](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/getting-started-with-the-new-user-experience0.html)."
+  utter_kb_43:
+  - text: 'Projects are sets of coordinated activities that are managed to deliver
+      a product, service, or other Return on Investment (ROI). As a project manager,
+      you define and track your project tasks, team members, documents, links, status,
+      budget, actuals, and other details. Examples include a development project for
+      a mobile app, a credit card security improvement, or an online order entry system.
+      The key elements of a project are the tasks (activities) that define the project
+      work and the staff members who perform the work. Scope, time, and budget constraints
+      guide projects. The constraints influence estimates that attempt to determine
+      task duration, project duration, total cost, and other metrics.
+
+
+      Clarity PPM lets you manage your project lifecycle as follows, click here to
+      access the [full article](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html).
+
+
+      * [Project Lifecycle](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html#concept.dita_a97fe2ad916280192b726fb65c3c3a727e8a1101_ProjectLifecycle)
+
+      * [Navigate to Projects](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html#concept.dita_a97fe2ad916280192b726fb65c3c3a727e8a1101_NavigatetoProjects)
+
+      * [Manage Projects From the Tiles Layout](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html#concept.dita_a97fe2ad916280192b726fb65c3c3a727e8a1101_ManageProjectTiles)
+
+      * [Manage Projects From the Grid Layout](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html#concept.dita_a97fe2ad916280192b726fb65c3c3a727e8a1101_ManageProjectsGridView)
+
+      * [Project Details with Display Mappings](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html#concept.dita_a97fe2ad916280192b726fb65c3c3a727e8a1101_ProjectDetailswithDisplayMappings)
+
+      * [View or Edit OBS Fields](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html#concept.dita_a97fe2ad916280192b726fb65c3c3a727e8a1101_VieworEditOBSFields)
+
+      * [Associate Projects with OBS](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html#concept.dita_a97fe2ad916280192b726fb65c3c3a727e8a1101_AssociateProjectswithOBSUnits)
+
+      * [View the Effort and Budget Visuals for a Project](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html#concept.dita_a97fe2ad916280192b726fb65c3c3a727e8a1101_ViewtheEffortandBudgetVisualsforaProject)
+
+      *[Open Projects in Gantt View or an External Scheduler](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html#concept.dita_a97fe2ad916280192b726fb65c3c3a727e8a1101_OpenProjectsinGanttVieworanExternalScheduler)
+
+      * [Export Project Details to a CSV File](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html#concept.dita_a97fe2ad916280192b726fb65c3c3a727e8a1101_ExportProjectDetailstoaCSVFile)
+
+      * [Deactivate a Project](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html#concept.dita_a97fe2ad916280192b726fb65c3c3a727e8a1101_DeactivateaProject)
+
+      * [Personalize the Banner Color for a Project](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html#concept.dita_a97fe2ad916280192b726fb65c3c3a727e8a1101_PersonalizetheBannerColorforaProject)'
+  utter_kb_44:
+  - text: "You can associate, update, or dissociate a project with Department, Location,\
+      \ Organizational, and Default Resource OBS. \r\n\r\n*Follow these steps:*\r\n\
+      1. Click *Projects* from the main menu.The Projects grid page opens.\r\n\r\n\
+      2. Navigate to the *Column* picker, select the following OBS units as required:\r\
+      \n* Department\r\n* Location\r\n* Organization\r\n* Default Resource OBS Unit\r\
+      \n\r\nThe associated columns are added to the Projects grid. You can also edit\
+      \ the OBS attributes from the grid.\r\n\r\nTo understand Using the Project Management\
+      \ in Clarity PPM, see the article [Create, Open, and View Projects](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html)."
+  utter_kb_45:
+  - text: "The Effort Spent and Budget Spent visuals that appear on the default project\
+      \ tiles provide the following information about a project at a given time.\r\
+      \n* The actual numbers of hours already posted by team members as a percentage\
+      \ of the total available hours.\r\n* The total actual cost or amount that is\
+      \ already spent as a percentage of the total budget for the project.\r\n\r\n\
+      For more information about Project Financials see [New User Experience: Manage\
+      \ Financial Plans ](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-manage-financial-plans.html)\r\
+      \n\r\nHere is the link to [full article](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html)\
+      \ on *Project Management*."
+  utter_kb_46:
+  - text: 'To change the banner color, go to the *Project Details* tab and change
+      the color that is currently selected for Banner Color.
+
+
+      [Click here](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html)
+      for the full article on Project Management.'
+  utter_kb_47:
+  - text: To Learn about, how to use with Demand Management or Capture, Develop and
+      Approve new Ideas, see the article [Capture, Develop, and Approve New Ideas](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-capture-develop-and-approve-new-ideas.html).
+  utter_kb_48:
+  - text: 'As a resource manager, project manager, or project coordinator, use the
+      Staffing features described in this article to plan role allocations, request
+      resources, and staff investments with the right resources.
+
+
+      Here are some links to get you started with:
+
+      * [About Staffing Requests by Investments](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-request-resources-and-roles-to-staff-investments.html#concept.dita_f21e7f6bada6ef49149215ea01e7eda958e50bf3_AboutStaffingRequestsbyInvestments)
+
+      * [Book Resources or Roles to Investments](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-request-resources-and-roles-to-staff-investments.html#concept.dita_f21e7f6bada6ef49149215ea01e7eda958e50bf3_BookResourcesorRolestoInvestments)
+
+      * [Request the Allocation of a New Role On an Investment](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-request-resources-and-roles-to-staff-investments.html#concept.dita_f21e7f6bada6ef49149215ea01e7eda958e50bf3_RequesttheAllocationofaNewRoleOnanInvestment)
+
+      * [Replace a Role with a Named Resource](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-request-resources-and-roles-to-staff-investments.html#concept.dita_f21e7f6bada6ef49149215ea01e7eda958e50bf3_ReplaceaRolewithaNamedResource)
+
+      * [Remove an Allocation from an Investment](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-request-resources-and-roles-to-staff-investments.html#concept.dita_f21e7f6bada6ef49149215ea01e7eda958e50bf3_RemoveanAllocationfromanInvestment)
+
+      * [Edit an Investment Allocation](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-request-resources-and-roles-to-staff-investments.html#concept.dita_f21e7f6bada6ef49149215ea01e7eda958e50bf3_EditanInvestmentAllocation)
+
+      * [Pin Investments for Focused Staffing](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-request-resources-and-roles-to-staff-investments.html#concept.dita_f21e7f6bada6ef49149215ea01e7eda958e50bf3_PinInvestmentsforFocusedStaffing)
+
+      * [View Investment General Properties](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-request-resources-and-roles-to-staff-investments.html#concept.dita_f21e7f6bada6ef49149215ea01e7eda958e50bf3_ViewInvestmentGeneralProperties)
+
+      * [Edit Role Request Properties](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-request-resources-and-roles-to-staff-investments.html#concept.dita_f21e7f6bada6ef49149215ea01e7eda958e50bf3_EditRoleRequestProperties)
+
+      * [Edit Resource Request Properties](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-request-resources-and-roles-to-staff-investments.html#concept.dita_f21e7f6bada6ef49149215ea01e7eda958e50bf3_EditResourceRequestProperties)
+
+      * [Filter the Investments-to-Resources View](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-request-resources-and-roles-to-staff-investments.html#concept.dita_f21e7f6bada6ef49149215ea01e7eda958e50bf3_FiltertheInvestmentstoResourcesView)'
+  utter_kb_49:
+  - text: See the article [Staff an Investment](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-and-edit-custom-investments/custom-investments-staff-an-investment.html),
+      to know more about Staffing Projects in Clarity PPM.
+  utter_kb_5:
+  - text: "I have few articles and videos on Demand Management.\r\nYou can use the\
+      \ Demand Management module to review and approve the right ideas and provide\
+      \ feedback on other ideas.\r\n\r\nWatch the following [video](https://youtu.be/Jo1tRv6pU10)\
+      \ to see how you can use [Ideas in Clarity PPM](https://youtu.be/Jo1tRv6pU10).\r\
+      \n\r\nTo learn more about ideas, see [New User Experience: Capture, Develop,\
+      \ and Approve New Ideas](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-capture-develop-and-approve-new-ideas.html)."
+  utter_kb_50:
+  - text: To understand how to Review and Approve the Timesheets is Clarity PPM New
+      User Experience, see the article [Review and Approve Timesheets](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-enter-hours-and-submit-a-timesheet/new-user-experience-review-and-approve-timesheets.html)
+  utter_kb_51:
+  - text: To understand the usage of Menu Links in New User Experience, see the article
+      [Create, Edit, and Delete Menu Links](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/Manage-Menu-Links.html).
+  utter_kb_52:
+  - text: 'As an administrator, you can configure the features in the New User Experience
+      to varying degrees. Some configuration options are available in the New User
+      Experience; however, many options remain under the Administration menu in classic
+      PPM.
+
+
+      Here are few articles worth your view:
+
+
+      * [Enable the New User Experience](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-administration-and-configuration.html#concept.dita_cbcb0231965af3ecce3113d145e1ba1e1e8b3f32_EnabletheNewUserExperience)
+
+      * [Enable New Timesheets](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-administration-and-configuration.html#concept.dita_cbcb0231965af3ecce3113d145e1ba1e1e8b3f32_EnableNewTimesheets)
+
+      * [Configure Single Sign-On (SSO) for the New User Experience  (On-Premise only)](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-administration-and-configuration.html#concept.dita_cbcb0231965af3ecce3113d145e1ba1e1e8b3f32_ConfigureSingleSignOnSSOfortheppmnew)
+
+      * [Create a Menu Link in Classic PPM to the New User Experience ](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-administration-and-configuration.html#concept.dita_cbcb0231965af3ecce3113d145e1ba1e1e8b3f32_CreateaMenuLinkinClassicPPMtotheppmnew)
+
+      * [Hide or Show IE 11 Not Supported Messages](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-administration-and-configuration.html#concept.dita_cbcb0231965af3ecce3113d145e1ba1e1e8b3f32_HideorShowIE11NotSupportedMessages)
+
+      * [Configure Timesheet Attestation](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-administration-and-configuration.html#concept.dita_cbcb0231965af3ecce3113d145e1ba1e1e8b3f32_ConfigureTimesheetAttestation)
+
+      * [Configure Timesheets to Spread One Total Value Equally Across Multiple Days](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-administration-and-configuration.html#concept.dita_cbcb0231965af3ecce3113d145e1ba1e1e8b3f32_ConfigureTimesheetstoSpreadOneTotalValueEquallyAcrossMultipleDays)'
+  utter_kb_53:
+  - text: To learn how to use the Blueprints, see [Configure Blueprints for Project
+      and Investments](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-administration-and-configuration/new-user-experience-configure-blueprints-for-projects-and-investments.html)
+  utter_kb_54:
+  - text: 'TO learn how to Generate Keys for Integration using REST API, see the article
+      [REST API: Define Clients and Generate Keys for Integrations with Clarity PPM](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/reference/rest-api-documentation-for-authorized-developers/rest-api-define-clients-and-generate-keys-for-integrations-with-clarity-ppm.html).'
+  utter_kb_55:
+  - text: "See the [video](https://www.youtube.com/watch?v=EJrwX_VIG68&feature=youtu.be)\
+      \ on Submitting Timesheet.\r\n\r\nHere is the full article you could refer to\
+      \ understand [Entering Hours and Submitting a Timesheet](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-enter-hours-and-submit-a-timesheet.html)."
+  utter_kb_56:
+  - text: See the article [Track Tasks and To-Do Items](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-track-tasks-and-to-do-items.html)
+      to learn about Managing Tasks and To-Dos in Clarity PPM.
+  utter_kb_57:
+  - text: See the article [Manage Resources and Teams](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/Manage-Resources-and-Teams.html)
+      to understand how to use organize your resources in Teams.
+  utter_kb_58:
+  - text: You can go through the article to learn about [Working with Tasks](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-project-phases-milestones-tasks-and-to-do-items.html#concept.dita_ac4d9bc80baa87ccdcb448ea02cfbbf31e05c275_WorkingwithTasks).
+  utter_kb_59:
+  - text: 'You can manage your resource assignments, including the assignment properties,
+      removing resource assignments from tasks, and replacing resources that are assigned
+      to tasks.
+
+      Below are the few articles which you can refer:
+
+
+      * [Modify the Resource Assignment Properties](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/Using-Classic-Clarity-PPM/project-management/manage-project-teams/manage-resource-assignments.html#concept.dita_e2d5f539c1d73132f9e461322c1cb28ea9a04337_ModifytheResourceAssignmentProperties)
+
+      * [Remove Resource Assignments from Tasks](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/Using-Classic-Clarity-PPM/project-management/manage-project-teams/manage-resource-assignments.html#concept.dita_e2d5f539c1d73132f9e461322c1cb28ea9a04337_RemoveResourceAssignmentsfromTasks)
+
+      * [Replace Resources Assigned to Tasks](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/Using-Classic-Clarity-PPM/project-management/manage-project-teams/manage-resource-assignments.html#concept.dita_e2d5f539c1d73132f9e461322c1cb28ea9a04337_ReplaceResourcesAssignedtoTasks)'
+  utter_kb_6:
+  - text: "Roadmaps help you review the objectives aligned with each strategy and\
+      \ define the budget allocated to each outcome.\r\n\r\nWatch the video to see\
+      \ how you can use [Roadmaps in Clarity PPM](https://youtu.be/7h7dzEZZuDU).\r\
+      \n\r\nTo learn more about Roadmaps, see [New User Experience: Top-Down Planning\
+      \ with Roadmaps](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-top-down-planning-with-roadmaps.html)."
+  utter_kb_60:
+  - text: You can watch the vidoes in the playlist to get an understanding of [Clarity
+      PPM Common Components - Grid, Chart and Board](https://www.youtube.com/playlist?list=PLynEdQRJawmwMKhy0Y8bxmqLtv5XP7O2i).
+  utter_kb_61:
+  - text: "See this [Video](https://web.microsoftstream.com/video/b4edb9fd-627a-4fc2-9c2e-cdbaa384fa97)\
+      \ to get an overview of the common grid and chart components in Clarity PPM.\n\
+      \nAdditionally, you can watch the below videos to get more understanding on\
+      \ using Common Grid in Clarity PPM.\n* [Clarity - Common Grid Components](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/Manage-Resources-and-Teams.html)\
+      \ \n* [Clarity - Common Components Grid Chart](https://www.youtube.com/watch?v=_GTpJ21RpoU&list=PLynEdQRJawmwMKhy0Y8bxmqLtv5XP7O2i&index=2) "
+  utter_kb_62:
+  - text: To learn using the Timeline View, see the video [Timeline View](https://youtu.be/sXPJ9di6i0k).
+  utter_kb_63:
+  - text: To understand how Board View is used in Clarity PPM, see the video [Clarity
+      - Common Components Board](https://www.youtube.com/watch?v=e5wPnfhW9BU&list=PLynEdQRJawmwMKhy0Y8bxmqLtv5XP7O2i&index=4&t=0s).
+  utter_kb_7:
+  - text: "One of the essential parts of managing investments is to ensure they stay\
+      \ within budget.\r\nWatch the video to see how you can use [Financials in Clarity\
+      \ PPM](https://youtu.be/v8Z_TG2FaCM).\r\n\r\n*TIP*:\r\nTo listen to a Clarity\
+      \ PPM Expert explain how you can leverage the financial management capabilities\
+      \ of Clarity PPM, see [Financial Management: Modern Budgets](https://community.broadcom.com/enterprisesoftware/viewdocument/replay-resource-management-balan-1?CommunityKey=7f0cbca3-5f93-4d44-a369-1a8ce98f5578&tab=librarydocuments.html).\r\
+      \n\r\nTo learn about Financials, see [New User Experience: Manage Financial\
+      \ Plans](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects/new-user-experience-manage-financial-plans.html)."
+  utter_kb_8:
+  - text: 'Here is the [Getting Started with Clarity](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/Getting-Started.html#concept.dita_4f58326d-8735-4d5d-8383-cda5ae9a97a6_keymodules)
+      video series; additionally watch [Introduction to Clarity PPM](https://youtu.be/YAvrt5aZEDw)
+      to get introduction to Clarity PPM.
+
+
+      ![Getting Started Video Series](https://techdocs.broadcom.com/content/dam/broadcom/techdocs/us/en/assets/docops/ccppmopb/GT.jpg)'
+  utter_kb_9:
+  - text: "This article will help you understand the main aspects of Project Management\
+      \ in Clarity.\r\n\r\nWatch the [video](https://youtu.be/vodEe8bLun8) to see\
+      \ how you can use Project Management in Clarity PPM.\r\n\r\n*TIP:*\r\nTo listen\
+      \ to a Clarity PPM Expert, explain how you can leverage the project management\
+      \ capabilities of Clarity PPM, see [Project Management: Work for Everyone](https://community.broadcom.com/enterprisesoftware/viewdocument/replay-roadmapping-your-enterpris?CommunityKey=7f0cbca3-5f93-4d44-a369-1a8ce98f5578&tab=librarydocuments.html).\r\
+      \n\r\nTo learn about Project Management, see [New User Experience: Create, Open,\
+      \ and View Projects](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/business-management/clarity-project-and-portfolio-management-ppm-on-premise/15-7-1/using/new-user-experience-create-open-and-view-projects.html)."
+  utter_kb_init_txt:
+  - text: This is what I found in my knowledge base. Hope it'll be useful to you.
+  - text: Here is an article for you, which could answer your query.
+  - text: I found this in the Knowledge Base.
+  - text: Here you go, this will answer your query.
+  - text: This might help in answering your question.
+  - text: I have few articles and videos which might help
+  - text: Okay! I see there is an article which could help.
+  - text: I think this is what you are looking for...
+  - text: I hope this is what you were searching for...
+  utter_not_helpful:
+  - text: No problem.  Can you let me know what was wrong with the suggestion or content.
+      This will help me improve over time.
+  - text: Sometimes I'm spot on... other times I'm a little wide of the mark but I
+      always try my best. Can you let me know what was wrong with the suggestion or
+      content so that I can improve for next time.
+  - text: I'm sorry. Everyday I learn a little more. Can you let me know what was
+      wrong with the suggestion or content. The best way to learn is to get constructive
+      feedback.
+  utter_post_feedback:
+  - text: Thank You. I have received your valuable feedback as, is there anything
+      else I can help you with?
+  - text: Fantastic. All feedback is much appreciated. Is there anything else I can
+      help you with?
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60

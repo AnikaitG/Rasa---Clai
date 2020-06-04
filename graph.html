@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Rasa Core Visualisation</title>
+    <script src="https://dagrejs.github.io/project/dagre-d3/latest/dagre-d3.min.js"></script>
+    <script src="https://dagrejs.github.io/project/dagre/latest/dagre.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://dagrejs.github.io/project/graphlib-dot/v0.6.3/graphlib-dot.js"></script>
+</head>
+<body>
+<div id="errormsg" style="color: #b00"></div>
+<svg>
+    <style>
+        .node.invisible > rect {
+            display: none;
+        }
+
+        .node.start > rect {
+            fill: #7f7;
+            rx: 30;
+            ry: 18;
+        }
+
+        .node.end > rect {
+            fill: #f77;
+            rx: 30;
+            ry: 18;
+        }
+
+        .node:not(.active) > rect, .node:not(.active) > .label {
+            opacity: 0.4;
+        }
+
+        .edgePath:not(.active) path {
+            opacity: 0.4;
+        }
+
+        .node.ellipsis > rect {
+            fill: #CCC;
+        }
+
+        .node.intent > rect {
+            fill: #7ff;
+        }
+
+        .node.dashed > rect {
+            stroke-dasharray: 5;
+        }
+
+        text {
+            font-weight: 300;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serf, serif;
+            font-size: 14px;
+            color: #1f1d1d;
+        }
+
+        .node rect {
+            stroke: #444;
+            fill: #fff;
+            stroke-width: 1.5px;
+        }
+
+        .edgePath path {
+            stroke: #333;
+            stroke-width: 1.5px;
+        }
+
+        svg {
+            position: fixed;
+            top: 10px;
+            left: 0;
+            height: 100%;
+            width: 100%
+        }
+    </style>
+    <g></g>
+</svg>
+<script>
+
+  function serveGraph() {
+    let oldInputGraphValue;
+
+    const url = 'visualization.dot';
+    const refreshInterval = 500;
+
+    // trigger a refresh by fetching an updated graph
+    setInterval(function () {
+      fetch(url).then(r => r.text()).then(dot => {
+        document.getElementById('errormsg').innerHTML = '';
+        if (oldInputGraphValue === dot) return;
+
+        oldInputGraphValue = dot;
+        drawGraph(dot);
+      }).catch(err => {
+        document.getElementById('errormsg').innerHTML =
+          'Failed to update plot. (' + err.message + ')';
+      });
+    }, refreshInterval);
+  }
+
+  function drawGraph(graph) {
+    let g = graphlibDot.read(graph);
+    // Set margins, if not present
+    if (!g.graph().hasOwnProperty("marginx") &&
+      !g.graph().hasOwnProperty("marginy")) {
+      g.graph().marginx = 20;
+      g.graph().marginy = 20;
+    }
+    g.graph().transition = function (selection) {
+      return selection.transition().duration(300);
+    };
+    // Render the graph into svg g
+    d3.select("svg g").call(render, g);
+  }
+  // Set up zoom support
+  const svg = d3.select("svg"),
+    inner = d3.select("svg g"),
+    zoom = d3.zoom().on("zoom", function () {
+      inner.attr("transform", d3.event.transform);
+    });
+  svg.call(zoom);
+
+  // Create and configure the renderer
+  const render = dagreD3.render();
+
+  let isClient = false;
+  isClient = true;
+
+  if (isClient) {
+    // Mark all nodes and their edges as active
+    cssRules = document.styleSheets[0].cssRules;
+    cssRules[3].style.opacity = 1;
+    cssRules[4].style.opacity = 1;
+
+    let graph;
+    graph = `digraph  {
+0 [class="start active", fillcolor=green, fontsize=12, label=START, style=filled];
+"-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
+1 [class="", fontsize=12, label=utter_kb_init_txt];
+2 [class="", fontsize=12, label=utter_kb_47];
+3 [class="", fontsize=12, label=utter_feedback];
+4 [class="", fontsize=12, label=utter_not_helpful];
+5 [class="", fontsize=12, label=utter_post_feedback];
+6 [class="", fontsize=12, label=utter_kb_init_txt];
+7 [class="", fontsize=12, label=utter_kb_48];
+9 [class="", fontsize=12, label=utter_happy];
+15 [class="", fontsize=12, label=utter_kb_init_txt];
+16 [class="", fontsize=12, label=utter_kb_49];
+24 [class="", fontsize=12, label=utter_kb_init_txt];
+25 [class="", fontsize=12, label=utter_kb_50];
+33 [class="", fontsize=12, label=utter_kb_init_txt];
+34 [class="", fontsize=12, label=utter_kb_51];
+42 [class="", fontsize=12, label=utter_kb_init_txt];
+43 [class="", fontsize=12, label=utter_kb_52];
+46 [class="", fontsize=12, label=utter_kb_init_txt];
+47 [class="", fontsize=12, label=utter_kb_2];
+56 [class="", fontsize=12, label=utter_kb_init_txt];
+57 [class="", fontsize=12, label=utter_kb_53];
+65 [class="", fontsize=12, label=utter_kb_init_txt];
+66 [class="", fontsize=12, label=utter_kb_54];
+74 [class="", fontsize=12, label=utter_kb_init_txt];
+75 [class="", fontsize=12, label=utter_kb_55];
+83 [class="", fontsize=12, label=utter_kb_init_txt];
+84 [class="", fontsize=12, label=utter_kb_56];
+92 [class="", fontsize=12, label=utter_kb_init_txt];
+93 [class="", fontsize=12, label=utter_kb_57];
+96 [class="", fontsize=12, label=utter_kb_init_txt];
+97 [class="", fontsize=12, label=utter_kb_3];
+105 [class="", fontsize=12, label=utter_kb_init_txt];
+106 [class="", fontsize=12, label=utter_kb_58];
+114 [class="", fontsize=12, label=utter_kb_init_txt];
+115 [class="", fontsize=12, label=utter_kb_59];
+123 [class="", fontsize=12, label=utter_kb_init_txt];
+124 [class="", fontsize=12, label=utter_kb_60];
+132 [class="", fontsize=12, label=utter_kb_init_txt];
+133 [class="", fontsize=12, label=utter_kb_61];
+141 [class="", fontsize=12, label=utter_kb_init_txt];
+142 [class="", fontsize=12, label=utter_kb_62];
+155 [class="", fontsize=12, label=utter_kb_init_txt];
+156 [class="", fontsize=12, label=utter_kb_63];
+164 [class="", fontsize=12, label=utter_kb_init_txt];
+165 [class="", fontsize=12, label=utter_kb_4];
+173 [class="", fontsize=12, label=utter_kb_init_txt];
+174 [class="", fontsize=12, label=utter_kb_5];
+182 [class="", fontsize=12, label=utter_kb_init_txt];
+183 [class="", fontsize=12, label=utter_kb_6];
+191 [class="", fontsize=12, label=utter_kb_init_txt];
+192 [class="", fontsize=12, label=utter_kb_7];
+195 [class="", fontsize=12, label=utter_greet];
+202 [class="", fontsize=12, label=utter_kb_init_txt];
+203 [class="", fontsize=12, label=utter_kb_8];
+211 [class="", fontsize=12, label=utter_kb_init_txt];
+212 [class="", fontsize=12, label=utter_kb_9];
+220 [class="", fontsize=12, label=utter_kb_init_txt];
+221 [class="", fontsize=12, label=utter_kb_10];
+229 [class="", fontsize=12, label=utter_kb_init_txt];
+230 [class="", fontsize=12, label=utter_kb_11];
+238 [class="", fontsize=12, label=utter_kb_init_txt];
+239 [class="", fontsize=12, label=utter_kb_12];
+243 [class="", fontsize=12, label=utter_cheer_up];
+244 [class="", fontsize=12, label=utter_did_that_help];
+251 [class="", fontsize=12, label=utter_kb_init_txt];
+252 [class="", fontsize=12, label=utter_kb_13];
+260 [class="", fontsize=12, label=utter_kb_init_txt];
+261 [class="", fontsize=12, label=utter_kb_14];
+269 [class="", fontsize=12, label=utter_kb_init_txt];
+270 [class="", fontsize=12, label=utter_kb_15];
+278 [class="", fontsize=12, label=utter_kb_init_txt];
+279 [class="", fontsize=12, label=utter_kb_16];
+287 [class="", fontsize=12, label=utter_kb_init_txt];
+288 [class="", fontsize=12, label=utter_kb_17];
+294 [class="", fontsize=12, label=utter_goodbye];
+300 [class="", fontsize=12, label=utter_kb_init_txt];
+301 [class="", fontsize=12, label=utter_kb_18];
+309 [class="", fontsize=12, label=utter_kb_init_txt];
+310 [class="", fontsize=12, label=utter_kb_19];
+318 [class="", fontsize=12, label=utter_kb_init_txt];
+319 [class="", fontsize=12, label=utter_kb_20];
+327 [class="", fontsize=12, label=utter_kb_init_txt];
+328 [class="", fontsize=12, label=utter_kb_21];
+336 [class="", fontsize=12, label=utter_kb_init_txt];
+337 [class="", fontsize=12, label=utter_kb_22];
+346 [class="", fontsize=12, label=utter_kb_init_txt];
+347 [class="", fontsize=12, label=utter_kb_23];
+355 [class="", fontsize=12, label=utter_kb_init_txt];
+356 [class="", fontsize=12, label=utter_kb_24];
+364 [class="", fontsize=12, label=utter_kb_init_txt];
+365 [class="", fontsize=12, label=utter_kb_25];
+373 [class="", fontsize=12, label=utter_kb_init_txt];
+374 [class="", fontsize=12, label=utter_kb_26];
+382 [class="", fontsize=12, label=utter_kb_init_txt];
+383 [class="", fontsize=12, label=utter_kb_27];
+386 [class="", fontsize=12, label=utter_iamabot];
+392 [class="", fontsize=12, label=utter_kb_init_txt];
+393 [class="", fontsize=12, label=utter_kb_28];
+401 [class="", fontsize=12, label=utter_kb_init_txt];
+402 [class="", fontsize=12, label=utter_kb_29];
+410 [class="", fontsize=12, label=utter_kb_init_txt];
+411 [class="", fontsize=12, label=utter_kb_30];
+419 [class="", fontsize=12, label=utter_kb_init_txt];
+420 [class="", fontsize=12, label=utter_kb_31];
+428 [class="", fontsize=12, label=utter_kb_init_txt];
+429 [class="", fontsize=12, label=utter_kb_32];
+432 [class="", fontsize=12, label=utter_kb_init_txt];
+433 [class="", fontsize=12, label=action_give_help];
+434 [class="", fontsize=12, label=utter_feedback];
+440 [class="", fontsize=12, label=utter_kb_init_txt];
+441 [class="", fontsize=12, label=utter_kb_33];
+449 [class="", fontsize=12, label=utter_kb_init_txt];
+450 [class="", fontsize=12, label=utter_kb_34];
+458 [class="", fontsize=12, label=utter_kb_init_txt];
+459 [class="", fontsize=12, label=utter_kb_35];
+467 [class="", fontsize=12, label=utter_kb_init_txt];
+468 [class="", fontsize=12, label=utter_kb_36];
+476 [class="", fontsize=12, label=utter_kb_init_txt];
+477 [class="", fontsize=12, label=utter_kb_37];
+480 [class="", fontsize=12, label=utter_kb_init_txt];
+481 [class="", fontsize=12, label=utter_kb_1];
+489 [class="", fontsize=12, label=utter_kb_init_txt];
+490 [class="", fontsize=12, label=utter_kb_38];
+498 [class="", fontsize=12, label=utter_kb_init_txt];
+499 [class="", fontsize=12, label=utter_kb_39];
+507 [class="", fontsize=12, label=utter_kb_init_txt];
+508 [class="", fontsize=12, label=utter_kb_40];
+516 [class="", fontsize=12, label=utter_kb_init_txt];
+517 [class="", fontsize=12, label=utter_kb_41];
+525 [class="", fontsize=12, label=utter_kb_init_txt];
+526 [class="", fontsize=12, label=utter_kb_42];
+539 [class="", fontsize=12, label=utter_kb_init_txt];
+540 [class="", fontsize=12, label=utter_kb_43];
+548 [class="", fontsize=12, label=utter_kb_init_txt];
+549 [class="", fontsize=12, label=utter_kb_44];
+557 [class="", fontsize=12, label=utter_kb_init_txt];
+558 [class="", fontsize=12, label=utter_kb_45];
+566 [class="", fontsize=12, label=utter_kb_init_txt];
+567 [class="", fontsize=12, label=utter_kb_46];
+583 [class=intent, fillcolor=lightblue, label=demand, shape=rect, style=filled];
+584 [class=intent, fillcolor=lightblue, label="resource allocation", shape=rect, style=filled];
+585 [class=intent, fillcolor=lightblue, label="How to Staff a Project in Clarity?", shape=rect, style=filled];
+586 [class=intent, fillcolor=lightblue, label="approve timesheet", shape=rect, style=filled];
+587 [class=intent, fillcolor=lightblue, label=menulink, shape=rect, style=filled];
+588 [class=intent, fillcolor=lightblue, label=Administration, shape=rect, style=filled];
+589 [class=intent, fillcolor=lightblue, label="Give me the overview of Clarity PPM", shape=rect, style=filled];
+590 [class=intent, fillcolor=lightblue, label="admin blueprint", shape=rect, style=filled];
+591 [class=intent, fillcolor=lightblue, label=client, shape=rect, style=filled];
+592 [class=intent, fillcolor=lightblue, label="submit timesheets", shape=rect, style=filled];
+593 [class=intent, fillcolor=lightblue, label=milestone, shape=rect, style=filled];
+594 [class=intent, fillcolor=lightblue, label=teams, shape=rect, style=filled];
+595 [class=intent, fillcolor=lightblue, label="project portfolio management", shape=rect, style=filled];
+596 [class=intent, fillcolor=lightblue, label=tasks, shape=rect, style=filled];
+597 [class=intent, fillcolor=lightblue, label="Manage Resource Assignments", shape=rect, style=filled];
+598 [class=intent, fillcolor=lightblue, label="chart, board, grid", shape=rect, style=filled];
+599 [class=intent, fillcolor=lightblue, label="chart layout", shape=rect, style=filled];
+600 [class=intent, fillcolor=lightblue, label=timeline, shape=rect, style=filled];
+601 [class=intent, fillcolor=lightblue, label="board view", shape=rect, style=filled];
+602 [class=intent, fillcolor=lightblue, label="getting started with investments", shape=rect, style=filled];
+603 [class=intent, fillcolor=lightblue, label="Getting Started with Demand Management", shape=rect, style=filled];
+604 [class=intent, fillcolor=lightblue, label="getting started roadmaps", shape=rect, style=filled];
+605 [class=intent, fillcolor=lightblue, label="Getting Started with Financial", shape=rect, style=filled];
+606 [class=intent, fillcolor=lightblue, label="good evening", shape=rect, style=filled];
+607 [class=intent, fillcolor=lightblue, label="Getting Started Introduction", shape=rect, style=filled];
+608 [class=intent, fillcolor=lightblue, label="get started with project management", shape=rect, style=filled];
+609 [class=intent, fillcolor=lightblue, label="Getting Started with Timesheets", shape=rect, style=filled];
+610 [class=intent, fillcolor=lightblue, label="Getting Started with Resources", shape=rect, style=filled];
+611 [class=intent, fillcolor=lightblue, label="edit hierarchy", shape=rect, style=filled];
+612 [class=intent, fillcolor=lightblue, label="roadmap synchronisation", shape=rect, style=filled];
+613 [class=intent, fillcolor=lightblue, label=domains, shape=rect, style=filled];
+614 [class=intent, fillcolor=lightblue, label=financial, shape=rect, style=filled];
+615 [class=intent, fillcolor=lightblue, label=actuals, shape=rect, style=filled];
+616 [class=intent, fillcolor=lightblue, label="Organise Columns on the Grid", shape=rect, style=filled];
+617 [class=intent, fillcolor=lightblue, label=costs, shape=rect, style=filled];
+618 [class=intent, fillcolor=lightblue, label="Cost Plans", shape=rect, style=filled];
+619 [class=intent, fillcolor=lightblue, label=status, shape=rect, style=filled];
+620 [class=intent, fillcolor=lightblue, label="manage risks", shape=rect, style=filled];
+621 [class=intent, fillcolor=lightblue, label=download, shape=rect, style=filled];
+622 [class=intent, fillcolor=lightblue, label="grid view", shape=rect, style=filled];
+623 [class=intent, fillcolor=lightblue, label="create task in board view", shape=rect, style=filled];
+624 [class=intent, fillcolor=lightblue, label="task timeline", shape=rect, style=filled];
+625 [class=intent, fillcolor=lightblue, label=microsoft, shape=rect, style=filled];
+626 [class=intent, fillcolor=lightblue, label="How do I create a project?", shape=rect, style=filled];
+627 [class=intent, fillcolor=lightblue, label="are you a bot?", shape=rect, style=filled];
+628 [class=intent, fillcolor=lightblue, label="project grid", shape=rect, style=filled];
+629 [class=intent, fillcolor=lightblue, label="navigation to projects", shape=rect, style=filled];
+630 [class=intent, fillcolor=lightblue, label="project details", shape=rect, style=filled];
+631 [class=intent, fillcolor=lightblue, label=tile, shape=rect, style=filled];
+632 [class=intent, fillcolor=lightblue, label=gantt, shape=rect, style=filled];
+633 [class=intent, fillcolor=lightblue, label="what do i do", shape=rect, style=filled];
+634 [class=intent, fillcolor=lightblue, label="Documentation for Authorized Developers", shape=rect, style=filled];
+635 [class=intent, fillcolor=lightblue, label="Budget Plan", shape=rect, style=filled];
+636 [class=intent, fillcolor=lightblue, label=notification, shape=rect, style=filled];
+637 [class=intent, fillcolor=lightblue, label="idea costplans", shape=rect, style=filled];
+638 [class=intent, fillcolor=lightblue, label="investments common", shape=rect, style=filled];
+639 [class=intent, fillcolor=lightblue, label=agile, shape=rect, style=filled];
+640 [class=intent, fillcolor=lightblue, label="investment financial plan", shape=rect, style=filled];
+641 [class=intent, fillcolor=lightblue, label="overview of custom investments", shape=rect, style=filled];
+642 [class=intent, fillcolor=lightblue, label=lifecycle, shape=rect, style=filled];
+643 [class=intent, fillcolor=lightblue, label="project details", shape=rect, style=filled];
+644 [class=intent, fillcolor=lightblue, label="project details", shape=rect, style=filled];
+645 [class=intent, fillcolor=lightblue, label="Project Management in Clarity PPM", shape=rect, style=filled];
+646 [class=intent, fillcolor=lightblue, label="project obs", shape=rect, style=filled];
+647 [class=intent, fillcolor=lightblue, label="How to view the Effort and Budget Visuals for a Project", shape=rect, style=filled];
+648 [class=intent, fillcolor=lightblue, label="Project Details", shape=rect, style=filled];
+649 [class=intent, fillcolor=lightblue, label="see you later", shape=rect, style=filled];
+650 [class=intent, fillcolor=lightblue, label="Not Helpful", shape=rect, style=filled];
+651 [class=intent, fillcolor=lightblue, label=Helpful, shape=rect, style=filled];
+652 [class=intent, fillcolor=lightblue, label="that sounds good", shape=rect, style=filled];
+653 [class=intent, fillcolor=lightblue, label=wonderful, shape=rect, style=filled];
+654 [class=intent, fillcolor=lightblue, label="extremely sad", shape=rect, style=filled];
+655 [class=intent, fillcolor=lightblue, label=correct, shape=rect, style=filled];
+656 [class=intent, fillcolor=lightblue, label="don't like that", shape=rect, style=filled];
+0 -> 583  [class="", key=0];
+0 -> 584  [class="", key=0];
+0 -> 585  [class="", key=0];
+0 -> 586  [class="", key=0];
+0 -> 587  [class="", key=0];
+0 -> 588  [class="", key=0];
+0 -> 589  [class="", key=0];
+0 -> 590  [class="", key=0];
+0 -> 591  [class="", key=0];
+0 -> 592  [class="", key=0];
+0 -> 593  [class="", key=0];
+0 -> 594  [class="", key=0];
+0 -> 595  [class="", key=0];
+0 -> 596  [class="", key=0];
+0 -> 597  [class="", key=0];
+0 -> 598  [class="", key=0];
+0 -> 599  [class="", key=0];
+0 -> 600  [class="", key=0];
+0 -> 601  [class="", key=0];
+0 -> 602  [class="", key=0];
+0 -> 603  [class="", key=0];
+0 -> 604  [class="", key=0];
+0 -> 605  [class="", key=0];
+0 -> 606  [class="", key=0];
+0 -> 607  [class="", key=0];
+0 -> 608  [class="", key=0];
+0 -> 609  [class="", key=0];
+0 -> 610  [class="", key=0];
+0 -> 611  [class="", key=0];
+0 -> 612  [class="", key=0];
+0 -> 613  [class="", key=0];
+0 -> 614  [class="", key=0];
+0 -> 615  [class="", key=0];
+0 -> 616  [class="", key=0];
+0 -> 617  [class="", key=0];
+0 -> 618  [class="", key=0];
+0 -> 619  [class="", key=0];
+0 -> 620  [class="", key=0];
+0 -> 621  [class="", key=0];
+0 -> 622  [class="", key=0];
+0 -> 623  [class="", key=0];
+0 -> 624  [class="", key=0];
+0 -> 625  [class="", key=0];
+0 -> 626  [class="", key=0];
+0 -> 627  [class="", key=0];
+0 -> 628  [class="", key=0];
+0 -> 629  [class="", key=0];
+0 -> 630  [class="", key=0];
+0 -> 631  [class="", key=0];
+0 -> 632  [class="", key=0];
+0 -> 633  [class="", key=0];
+0 -> 634  [class="", key=0];
+0 -> 635  [class="", key=0];
+0 -> 636  [class="", key=0];
+0 -> 637  [class="", key=0];
+0 -> 638  [class="", key=0];
+0 -> 639  [class="", key=0];
+0 -> 640  [class="", key=0];
+0 -> 641  [class="", key=0];
+0 -> 642  [class="", key=0];
+0 -> 643  [class="", key=0];
+0 -> 644  [class="", key=0];
+0 -> 645  [class="", key=0];
+0 -> 646  [class="", key=0];
+0 -> 647  [class="", key=0];
+0 -> 648  [class="", key=0];
+0 -> 649  [class="", key=0];
+1 -> 2  [class="", key=NONE, label=""];
+2 -> 3  [class="", key=NONE, label=""];
+3 -> 650  [class="", key=0];
+3 -> 651  [class="", key=0];
+4 -> 652  [class="", key=0];
+5 -> "-1"  [class="", key=NONE, label=""];
+6 -> 7  [class="", key=NONE, label=""];
+7 -> 3  [class="", key=NONE, label=""];
+9 -> "-1"  [class="", key=NONE, label=""];
+15 -> 16  [class="", key=NONE, label=""];
+16 -> 3  [class="", key=NONE, label=""];
+24 -> 25  [class="", key=NONE, label=""];
+25 -> 3  [class="", key=NONE, label=""];
+33 -> 34  [class="", key=NONE, label=""];
+34 -> 3  [class="", key=NONE, label=""];
+42 -> 43  [class="", key=NONE, label=""];
+43 -> 3  [class="", key=NONE, label=""];
+46 -> 47  [class="", key=NONE, label=""];
+47 -> 3  [class="", key=NONE, label=""];
+56 -> 57  [class="", key=NONE, label=""];
+57 -> 3  [class="", key=NONE, label=""];
+65 -> 66  [class="", key=NONE, label=""];
+66 -> 3  [class="", key=NONE, label=""];
+74 -> 75  [class="", key=NONE, label=""];
+75 -> 3  [class="", key=NONE, label=""];
+83 -> 84  [class="", key=NONE, label=""];
+84 -> 3  [class="", key=NONE, label=""];
+92 -> 93  [class="", key=NONE, label=""];
+93 -> 3  [class="", key=NONE, label=""];
+96 -> 97  [class="", key=NONE, label=""];
+97 -> 3  [class="", key=NONE, label=""];
+105 -> 106  [class="", key=NONE, label=""];
+106 -> 3  [class="", key=NONE, label=""];
+114 -> 115  [class="", key=NONE, label=""];
+115 -> 3  [class="", key=NONE, label=""];
+123 -> 124  [class="", key=NONE, label=""];
+124 -> 3  [class="", key=NONE, label=""];
+132 -> 133  [class="", key=NONE, label=""];
+133 -> 3  [class="", key=NONE, label=""];
+141 -> 142  [class="", key=NONE, label=""];
+142 -> 3  [class="", key=NONE, label=""];
+155 -> 156  [class="", key=NONE, label=""];
+156 -> 3  [class="", key=NONE, label=""];
+164 -> 165  [class="", key=NONE, label=""];
+165 -> 3  [class="", key=NONE, label=""];
+173 -> 174  [class="", key=NONE, label=""];
+174 -> 3  [class="", key=NONE, label=""];
+182 -> 183  [class="", key=NONE, label=""];
+183 -> 3  [class="", key=NONE, label=""];
+191 -> 192  [class="", key=NONE, label=""];
+192 -> 3  [class="", key=NONE, label=""];
+195 -> 653  [class="", key=0];
+195 -> 654  [class="", key=0];
+202 -> 203  [class="", key=NONE, label=""];
+203 -> 3  [class="", key=NONE, label=""];
+211 -> 212  [class="", key=NONE, label=""];
+212 -> 3  [class="", key=NONE, label=""];
+220 -> 221  [class="", key=NONE, label=""];
+221 -> 3  [class="", key=NONE, label=""];
+229 -> 230  [class="", key=NONE, label=""];
+230 -> 3  [class="", key=NONE, label=""];
+238 -> 239  [class="", key=NONE, label=""];
+239 -> 3  [class="", key=NONE, label=""];
+243 -> 244  [class="", key=NONE, label=""];
+244 -> 655  [class="", key=0];
+244 -> 656  [class="", key=0];
+251 -> 252  [class="", key=NONE, label=""];
+252 -> 3  [class="", key=NONE, label=""];
+260 -> 261  [class="", key=NONE, label=""];
+261 -> 3  [class="", key=NONE, label=""];
+269 -> 270  [class="", key=NONE, label=""];
+270 -> 3  [class="", key=NONE, label=""];
+278 -> 279  [class="", key=NONE, label=""];
+279 -> 3  [class="", key=NONE, label=""];
+287 -> 288  [class="", key=NONE, label=""];
+288 -> 3  [class="", key=NONE, label=""];
+294 -> "-1"  [class="", key=NONE, label=""];
+300 -> 301  [class="", key=NONE, label=""];
+301 -> 3  [class="", key=NONE, label=""];
+309 -> 310  [class="", key=NONE, label=""];
+310 -> 3  [class="", key=NONE, label=""];
+318 -> 319  [class="", key=NONE, label=""];
+319 -> 3  [class="", key=NONE, label=""];
+327 -> 328  [class="", key=NONE, label=""];
+328 -> 3  [class="", key=NONE, label=""];
+336 -> 337  [class="", key=NONE, label=""];
+337 -> 3  [class="", key=NONE, label=""];
+346 -> 347  [class="", key=NONE, label=""];
+347 -> 3  [class="", key=NONE, label=""];
+355 -> 356  [class="", key=NONE, label=""];
+356 -> 3  [class="", key=NONE, label=""];
+364 -> 365  [class="", key=NONE, label=""];
+365 -> 3  [class="", key=NONE, label=""];
+373 -> 374  [class="", key=NONE, label=""];
+374 -> 3  [class="", key=NONE, label=""];
+382 -> 383  [class="", key=NONE, label=""];
+383 -> 3  [class="", key=NONE, label=""];
+386 -> "-1"  [class="", key=NONE, label=""];
+392 -> 393  [class="", key=NONE, label=""];
+393 -> 3  [class="", key=NONE, label=""];
+401 -> 402  [class="", key=NONE, label=""];
+402 -> 3  [class="", key=NONE, label=""];
+410 -> 411  [class="", key=NONE, label=""];
+411 -> 3  [class="", key=NONE, label=""];
+419 -> 420  [class="", key=NONE, label=""];
+420 -> 3  [class="", key=NONE, label=""];
+428 -> 429  [class="", key=NONE, label=""];
+429 -> 3  [class="", key=NONE, label=""];
+432 -> 433  [class="", key=NONE, label=""];
+433 -> 434  [class="", key=NONE, label=""];
+434 -> "-1"  [class="", key=NONE, label=""];
+440 -> 441  [class="", key=NONE, label=""];
+441 -> 3  [class="", key=NONE, label=""];
+449 -> 450  [class="", key=NONE, label=""];
+450 -> 3  [class="", key=NONE, label=""];
+458 -> 459  [class="", key=NONE, label=""];
+459 -> 3  [class="", key=NONE, label=""];
+467 -> 468  [class="", key=NONE, label=""];
+468 -> 3  [class="", key=NONE, label=""];
+476 -> 477  [class="", key=NONE, label=""];
+477 -> 3  [class="", key=NONE, label=""];
+480 -> 481  [class="", key=NONE, label=""];
+481 -> 3  [class="", key=NONE, label=""];
+489 -> 490  [class="", key=NONE, label=""];
+490 -> 3  [class="", key=NONE, label=""];
+498 -> 499  [class="", key=NONE, label=""];
+499 -> 3  [class="", key=NONE, label=""];
+507 -> 508  [class="", key=NONE, label=""];
+508 -> 3  [class="", key=NONE, label=""];
+516 -> 517  [class="", key=NONE, label=""];
+517 -> 3  [class="", key=NONE, label=""];
+525 -> 526  [class="", key=NONE, label=""];
+526 -> 3  [class="", key=NONE, label=""];
+539 -> 540  [class="", key=NONE, label=""];
+540 -> 3  [class="", key=NONE, label=""];
+548 -> 549  [class="", key=NONE, label=""];
+549 -> 3  [class="", key=NONE, label=""];
+557 -> 558  [class="", key=NONE, label=""];
+558 -> 3  [class="", key=NONE, label=""];
+566 -> 567  [class="", key=NONE, label=""];
+567 -> 3  [class="", key=NONE, label=""];
+583 -> 1  [class="", key=0];
+584 -> 6  [class="", key=0];
+585 -> 15  [class="", key=0];
+586 -> 24  [class="", key=0];
+587 -> 33  [class="", key=0];
+588 -> 42  [class="", key=0];
+589 -> 46  [class="", key=0];
+590 -> 56  [class="", key=0];
+591 -> 65  [class="", key=0];
+592 -> 74  [class="", key=0];
+593 -> 83  [class="", key=0];
+594 -> 92  [class="", key=0];
+595 -> 96  [class="", key=0];
+596 -> 105  [class="", key=0];
+597 -> 114  [class="", key=0];
+598 -> 123  [class="", key=0];
+599 -> 132  [class="", key=0];
+600 -> 141  [class="", key=0];
+601 -> 155  [class="", key=0];
+602 -> 164  [class="", key=0];
+603 -> 173  [class="", key=0];
+604 -> 182  [class="", key=0];
+605 -> 191  [class="", key=0];
+606 -> 195  [class="", key=0];
+607 -> 202  [class="", key=0];
+608 -> 211  [class="", key=0];
+609 -> 220  [class="", key=0];
+610 -> 229  [class="", key=0];
+611 -> 238  [class="", key=0];
+612 -> 251  [class="", key=0];
+613 -> 260  [class="", key=0];
+614 -> 269  [class="", key=0];
+615 -> 278  [class="", key=0];
+616 -> 287  [class="", key=0];
+617 -> 300  [class="", key=0];
+618 -> 309  [class="", key=0];
+619 -> 318  [class="", key=0];
+620 -> 327  [class="", key=0];
+621 -> 336  [class="", key=0];
+622 -> 346  [class="", key=0];
+623 -> 355  [class="", key=0];
+624 -> 364  [class="", key=0];
+625 -> 373  [class="", key=0];
+626 -> 382  [class="", key=0];
+627 -> 386  [class="", key=0];
+628 -> 392  [class="", key=0];
+629 -> 401  [class="", key=0];
+630 -> 410  [class="", key=0];
+631 -> 419  [class="", key=0];
+632 -> 428  [class="", key=0];
+633 -> 432  [class="", key=0];
+634 -> 440  [class="", key=0];
+635 -> 449  [class="", key=0];
+636 -> 458  [class="", key=0];
+637 -> 467  [class="", key=0];
+638 -> 476  [class="", key=0];
+639 -> 480  [class="", key=0];
+640 -> 489  [class="", key=0];
+641 -> 498  [class="", key=0];
+642 -> 507  [class="", key=0];
+643 -> 516  [class="", key=0];
+644 -> 525  [class="", key=0];
+645 -> 539  [class="", key=0];
+646 -> 548  [class="", key=0];
+647 -> 557  [class="", key=0];
+648 -> 566  [class="", key=0];
+649 -> 294  [class="", key=0];
+650 -> 4  [class="", key=0];
+651 -> 9  [class="", key=0];
+652 -> 5  [class="", key=0];
+653 -> 9  [class="", key=0];
+654 -> 243  [class="", key=0];
+655 -> 9  [class="", key=0];
+656 -> 294  [class="", key=0];
+}
+`;
+    drawGraph(graph);
+  } else {
+    serveGraph();
+  }
+
+
+</script>
+</body>
+</html>
