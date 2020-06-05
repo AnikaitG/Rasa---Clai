@@ -20,6 +20,10 @@ pipeline:
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
 policies:
+  - name: "FallbackPolicy"
+    nlu_threshold: 0.4
+    core_threshold: 0.3
+    fallback_action_name: "action_default_fallback"
   - name: MemoizationPolicy
   - name: TEDPolicy
     max_history: 5
