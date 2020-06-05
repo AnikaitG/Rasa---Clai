@@ -12,6 +12,7 @@ actions:
 - utter_post_feedback
 - action_give_help
 intents:
+- utter_default
 - greet
 - goodbye
 - affirm
